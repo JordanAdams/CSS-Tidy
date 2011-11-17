@@ -1,0 +1,103 @@
+html {
+    background: #5A72A7;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    font: 10pt arial;
+    width: 862px;
+    margin: 50px auto;
+    overflow-y: scroll;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0px;
+}
+
+h1 {
+    font-family: 'Chunk Five';
+    font-weight: 400;
+    font-size: 600%;
+    color: #fff;
+    letter-spacing: 0.075em;
+    text-shadow: 0px 1px 0px #ddd, 0px 2px 0px #ddd, 0px 3px 0px #ddd, 0px 2px 20px rgba(0, 0, 0, 0.75);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#main {
+    background: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    width: 862px;
+    box-shadow: 0px 4px 0px #ccc, 0px 3px 20px rgba(0, 0, 0, 0.75);
+}
+
+#input {
+    width: 400px;
+    margin-right: 21px;
+    float: left;
+}
+
+#input textarea {
+    width: 100%;
+    padding: 5px;
+    display: block;
+    border: none;
+    background: #fff;
+    border-radius: 5px;
+    border: solid 1px #bbb;
+    resize: none;
+    outline: none;
+    box-shadow: inset 0px 2px 3px rgba(0, 0, 0, 0.15);
+    height: 250px;
+    font: 10pt courier, monospace;
+}
+
+#input textarea:focus {
+    border-color: #5A72A7;
+}
+
+#arrow {
+    float: left;
+    height: 262px;
+    width: 20px;
+    font-size: 22px;
+    line-height: 262px;
+    color: #ccc;
+    cursor: pointer;
+}
+
+#arrow:hover {
+    color: #A4B5DB;
+}
+
+#arrow:active {
+    color: #5A72A7;
+}
+
+#output {
+    background: #444;
+    width: 400px;
+    padding: 5px;
+    border-radius: 5px;
+    height: 250px;
+    border: solid 1px #444;
+    float: right;
+    font: 10pt courier, monospace;
+    color: #fff;
+}
+
+#options {
+    float: none;
+    clear: both;
+}
+
+footer {
+    font-size: 80%;
+    color: #fff;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
