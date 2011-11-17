@@ -31,7 +31,7 @@ h1 {
     padding: 5px;
     border-radius: 5px;
     width: 862px;
-    box-shadow: 0px 4px 0px #ccc, 0px 3px 20px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 4px 0px #ccc, 0px 5px 20px rgba(0, 0, 0, 0.75);
 }
 
 #input {
@@ -77,7 +77,7 @@ h1 {
     color: #5A72A7;
 }
 
-#output {
+#output pre {
     background: #444;
     width: 400px;
     padding: 5px;
@@ -87,6 +87,7 @@ h1 {
     float: right;
     font: 10pt courier, monospace;
     color: #fff;
+    margin: 0px;
 }
 
 #options {
@@ -100,4 +101,5 @@ footer {
     position: absolute;
     bottom: 20px;
     right: 20px;
+    text-shadow: 0px 1px 0px rgba(0, 0, 0, .75);
 }

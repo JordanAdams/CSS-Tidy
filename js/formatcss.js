@@ -1,7 +1,11 @@
-function $ (selector) {
-	return bonzo(qwery(selector));
-}
+$(document).ready(function() {
 
-var input = $('#input textarea').text();
+	$('#arrow').live('click', function() {
+		
+		var input = $('#input textarea').text();
 
-console.log(input);
+		$('#output pre').text(input);
+
+	});
+
+});
