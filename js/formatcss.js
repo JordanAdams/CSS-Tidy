@@ -1,36 +1,16 @@
 function minify_css(css) {
 
-	/* Selectors */
-	patt = /\s+{/g;
-	css = css.replace(patt, '{')
+	patt = /\/\*[\w\W]*?\*\//g;
+	css = css.replace(patt, '');
 
-	/* Prop : Val */
-	patt = /:\s+/g;
-	css = css.replace(patt, ':');
-	patt = /\s+:/g;
-	css = css.replace(patt, ':');
+	patt = /\s*{\s*/g;
+	css = css.replace(patt, '{');
 
-	/* Val ; */
-	patt = /;\s+/g;
+	patt = patt = /\s*}\s*/g;
+	css = css.replace(patt, '}');
+
+	patt = /;\s*/g;
 	css = css.replace(patt, ';');
-	patt = /\s+;/g;
-	css = css.replace(patt, ';');
-
-	/* Val Commas */
-	patt = /,\s+/g;
-	css = css.replace(patt, ',');
-	patt = /\s+,/g;
-	css = css.replace(patt, ',');
-
-	/* Tabs */
-	patt = /\t/g;
-	css = css.replace(patt, '');
-
-	/* Carriage Returns */
-	patt = /\n/g;
-	css = css.replace(patt, '');
-	patt = /\r/g;
-	css = css.replace(patt, '');
 
 	return css;
 
@@ -40,23 +20,22 @@ function format_css(css) {
 
 	css = minify_css(css);
 
-	/* ; Semicolons */
-	css = css.replace(/;/g, ";\n  ");
+	/* prop:val */
+	pattern = /([^\{\}:;\s]+)\s*:\s*([^\s:;{}][^:;{}]+[^\s:;{}]|[^\s:;{}]+)\s*([;}])/g;
+	css = css.replace(pattern, '  $1: $2$3');
 
-	/* {} Braces */
-	css = css.replace(/{/g, " {\n  ");
-	css = css.replace(/  }/g, "}\n\n");
+	/* Opening { */
+	css = css.replace(/\{/g, ' {\n');
 
-	/* : Colons */
-	css = css.replace(/:/g, ": ");
+	/* Ending ; */
+	css = css.replace(/;/g, ';\n');
 
-	/* , Commas */
-	css = css.replace(/,/g, ", ");
+	/* Closing } */
+	css = css.replace(/\s*}/g, '\n}\n\n');
 
-	/* Psuedo Selectors */
-	css = css.replace(/(.+:) (.+{)/g, '$1$2');
+	/* Whitepace at beginning */
+	css = css.replace(/\s*(.)/, '$1');
 
-	console.log(css);
 	return css;
 
 }

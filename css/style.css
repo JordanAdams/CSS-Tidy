@@ -8,8 +8,7 @@ body {
     font: 10pt arial;
     width: 862px;
     margin: 50px auto;
-    overflow-y: scroll;
-}
+    overflow-y: scroll; }
 
 h1, h2, h3, h4, h5, h6 {
     margin: 0px;
@@ -38,6 +37,7 @@ h1 {
     width: 400px;
     margin-right: 21px;
     float: left;
+    margin-bottom: 10px;
 }
 
 #input textarea {
@@ -53,10 +53,18 @@ h1 {
     box-shadow: inset 0px 2px 3px rgba(0, 0, 0, 0.15);
     height: 250px;
     font: 10pt courier, monospace;
+    color: #888;
+    -webkit-transition: all 0.15s ease-in;
+    -moz-transition: all 0.15s ease-in;
+}
+
+#input textarea:hover {
+    border-color: #5A72A7;
 }
 
 #input textarea:focus {
     border-color: #5A72A7;
+    box-shadow: inset 0px 2px 3px rgba(0, 0, 0, 0.15), 0px 0px 3px #5a72a7;
 }
 
 #arrow {
@@ -67,6 +75,8 @@ h1 {
     line-height: 262px;
     color: #ccc;
     cursor: pointer;
+    -webkit-transition: all 0.15s ease-in;
+    -moz-transition: all 0.15s ease-in;
 }
 
 #arrow:hover {
@@ -94,6 +104,11 @@ h1 {
 #options {
     float: none;
     clear: both;
+    background: #f2f2f2;
+    padding: 5px;
+    border-radius: 5px;
+    border: solid 1px #aaa;
+    text-align: center;
 }
 
 footer {
@@ -103,4 +118,14 @@ footer {
     bottom: 20px;
     right: 20px;
     text-shadow: 0px 1px 0px rgba(0, 0, 0, .75);
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer a:hover {
+    text-decoration: underline;
 }
