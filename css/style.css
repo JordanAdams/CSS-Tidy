@@ -88,6 +88,7 @@ h1 {
     font: 10pt courier, monospace;
     color: #fff;
     margin: 0px;
+    overflow-y: scroll;
 }
 
 #options {
