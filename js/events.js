@@ -2,7 +2,7 @@ function update_output (input) {
 	
 	input = format_css(input);
 	
-	$('#output pre').text(input);
+	$('#code pre').text(input);
 
 }
 
@@ -11,22 +11,22 @@ $(document).ready(function() {
 
 	var watermark = 'Put your CSS in here...';
 
-	$('#input textarea').keyup(function() {
+	$('#code textarea').keyup(function() {
 		update_output($(this).val());
 	});
 
 
-	$('#input textarea').keydown(function() {
+	$('#code textarea').keydown(function() {
 		update_output($(this).val());
 	});
 
 
 	$('#arrow').click(function() {
-		update_output($('#input textarea').val());
+		update_output($('#code textarea').val());
 	});
 
 
-	$('#input textarea').focus(function() {
+	$('#code textarea').focus(function() {
 
 		if($(this).val() === watermark) {
 			$(this).val('').css('color', '#000');
@@ -35,7 +35,7 @@ $(document).ready(function() {
 	});
 
 
-	$('#input textarea').blur(function () {
+	$('#code textarea').blur(function () {
 		
 		if($(this).val() === '') {
 			$(this).val(watermark).css('color', '#888');
