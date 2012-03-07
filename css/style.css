@@ -1,13 +1,13 @@
 html {
-    background: #5A72A7;
+    background: #f5f5f5 url('../images/bg.png') repeat-x top center;
 }
 
 body {
     margin: 0px;
     padding: 0px;
     font: 10pt arial;
-    width: 862px;
-    margin: 50px auto;
+    width: 656px;
+    margin: 100px auto 20px auto;
     overflow-y: scroll;
 }
 
@@ -16,32 +16,46 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-    font-family: 'Chunk Five';
-    font-weight: 400;
-    font-size: 600%;
-    color: #fff;
-    letter-spacing: 0.075em;
-    text-shadow: 0px 1px 0px #ddd, 0px 2px 0px #ddd, 0px 3px 0px #ddd, 0px 2px 20px rgba(0, 0, 0, 0.75);
-    text-align: center;
-    margin-bottom: 20px;
+    font: bold 150% "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;;
+    color: #666;
+    padding: 10px 0px 20px 10px;
+    line-height: 1;
+}
+
+h1 span {
+    color: #ccc;
+    font-size: 90%;
+    vertical-align: text-top;
+}
+
+h1 small {
+    font-size: 60%;
+    font-weight: normal;
+    margin-left: 5px;
+    color: #aaa;
 }
 
 #main {
     background: #fff;
-    padding: 5px;
     border-radius: 5px;
-    width: 862px;
-    box-shadow: 0px 4px 0px #ccc, 0px 3px 20px rgba(0, 0, 0, 0.75);
+    border: solid 1px #888;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.25);
 }
 
-#input {
-    width: 400px;
-    margin-right: 21px;
-    float: left;
+#code {
+    margin-bottom: 10px;
 }
 
-#input textarea {
-    width: 100%;
+#code:after {
+    float: none;
+    clear: both;
+    height: 0px;
+    content: '';
+    display: block;
+}
+
+#code textarea {
+    width: 300px;
     padding: 5px;
     display: block;
     border: none;
@@ -50,48 +64,85 @@ h1 {
     border: solid 1px #bbb;
     resize: none;
     outline: none;
-    box-shadow: inset 0px 2px 3px rgba(0, 0, 0, 0.15);
-    height: 250px;
+    /*box-shadow: inset 0px 2px 3px rgba(0, 0, 0, 0.15);*/
+    height: 160px;
     font: 10pt courier, monospace;
-}
-
-#input textarea:focus {
-    border-color: #5A72A7;
-}
-
-#arrow {
+    color: #888;
+    margin-left: 10px;
     float: left;
-    height: 262px;
-    width: 20px;
-    font-size: 22px;
-    line-height: 262px;
-    color: #ccc;
-    cursor: pointer;
+    margin-right: 10px;
+    -webkit-transition: all 0.05s ease-in;
+    -moz-transition: all 0.05s ease-in;
 }
 
-#arrow:hover {
-    color: #A4B5DB;
+#code textarea:focus {
+    border-color: #666;
 }
 
-#arrow:active {
-    color: #5A72A7;
+#code textarea::-webkit-scrollbar {
+    width:6px;
 }
 
-#output {
+#code textarea::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+#code textarea::-webkit-scrollbar-thumb {
+    background: #aaa;
+    border-radius: 100px;
+}
+
+#code textarea::-webkit-scrollbar-corner, 
+#code textarea::-webkit-resizer, 
+#code textarea::-webkit-scrollbar-button { 
+    display:none;
+    height: 0px;
+}
+
+#code pre {
     background: #444;
-    width: 400px;
+    width: 300px;
     padding: 5px;
     border-radius: 5px;
-    height: 250px;
-    border: solid 1px #444;
-    float: right;
+    height: 160px;
+    float: left;
     font: 10pt courier, monospace;
     color: #fff;
+    margin: 0px;
+    overflow-y: scroll;
+    outline: none;
+}
+
+#code pre::-webkit-scrollbar {
+    width:6px;
+    height: 6px;
+}
+
+#code pre::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+#code pre::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 100px;
+}
+
+#code pre::-webkit-scrollbar-corner, 
+#code pre::-webkit-resizer, 
+#code pre::-webkit-scrollbar-button { 
+    display:none;
+    height: 0px;
 }
 
 #options {
     float: none;
     clear: both;
+    background: #f2f2f2;
+    padding: 10px;
+    border-radius: 5px;
+    border: solid 1px #bbb;
+    text-align: center;
+    margin: 0px 10px 10px 10px;
 }
 
 footer {
@@ -100,4 +151,15 @@ footer {
     position: absolute;
     bottom: 20px;
     right: 20px;
+    text-shadow: 0px 1px 0px rgba(0, 0, 0, .75);
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer a:hover {
+    text-decoration: underline;
 }
