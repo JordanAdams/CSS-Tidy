@@ -1,41 +1,82 @@
-function minify_css(css) {
+function trim_space (string) {
 
-	patt = /\/\*[\w\W]*?\*\//g;
-	css = css.replace(patt, '');
+	string = string.replace(/^\s+|\s+$/g, '');
 
-	patt = /\s*{\s*/g;
-	css = css.replace(patt, '{');
-
-	patt = patt = /\s*}\s*/g;
-	css = css.replace(patt, '}');
-
-	patt = /;\s*/g;
-	css = css.replace(patt, ';');
-
-	return css;
+	return string;
 
 }
 
-function format_css(css) {
+function make_blocks(css) {
 
-	css = minify_css(css);
+	var input = document.getElementById('input');
+	var css = input.value;
+	var blocks = [];
 
-	/* prop:val */
-	pattern = /([^\{\}:;\s]+)\s*:\s*([^\s:;{}][^:;{}]+[^\s:;{}]|[^\s:;{}]+)\s*([;}])/g;
-	css = css.replace(pattern, '  $1: $2$3');
+	css = css.split('}');
+	
+	!css[length-1] || /^\s*$/.test(css[length-1]) ? css.pop() : false;
 
-	/* Opening { */
-	css = css.replace(/\{/g, ' {\n');
+	for(var i in css) {
 
-	/* Ending ; */
-	css = css.replace(/;/g, ';\n');
+		var block = {selector: null, props: []};
 
-	/* Closing } */
-	css = css.replace(/\s*}/g, '\n}\n\n');
+		css[i] = css[i].split('{');
+		
+		block.selector = trim_space(css[i][0]);
+		var propvals = css[i][1].split(';') || null;
 
-	/* Whitepace at beginning */
-	css = css.replace(/\s*(.)/, '$1');
+		/^\s*$/.test(propvals[propvals.length-1]) ? propvals.pop() : false;
 
-	return css;
+		for(var x in propvals) {
+
+			var pv = propvals[x].split(':');
+			var prop = trim_space(pv[0]);
+			var val = trim_space(pv[1]);
+
+			block.props.push([prop, val]);
+
+		}
+
+		blocks.push(block);
+
+	}
+
+	return blocks;
+
+}
+
+
+function format_css(blocks, format_str) {
+
+	format_str = format_str || "#selector {\n  #propertyA: #valueA;\n  #propertyB: #valueB;\n}\n\n#end"
+
+	var format = {};
+	var css = '';
+
+	format.after_selector = format_str.match(/#selector([\S\s]*)#propertyA/)[1];
+	
+	format.after_property = format_str.match(/#propertyA([\S\s]*)#valueA/)[1];
+
+	format.after_value = format_str.match(/#valueA([\S\s]*)#propertyB/)[1];
+
+	format.after_close = format_str.match(/#valueB([\S\s]*)#end/)[1];
+
+	console.log(format);
+
+	for(b in blocks) {
+		css += blocks[b].selector;
+		css += format.after_selector;
+
+		var props = blocks[b].props;
+
+		for(pv in props) {
+			css += props[pv][0];
+			css += format.after_property;
+			css += props[pv][1];
+			css += pv != props.length-1 ? format.after_value : format.after_close;
+		}
+	}
+
+	return trim_space(css);
 
 }

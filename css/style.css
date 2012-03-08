@@ -5,10 +5,11 @@ html {
 body {
     margin: 0px;
     padding: 0px;
-    font: 10pt arial;
     width: 656px;
     margin: 100px auto 20px auto;
     overflow-y: scroll;
+    color: #444;
+    font: 10pt "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -16,7 +17,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-    font: bold 150% "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;;
+    font-size: 150%;
+    font-weight: bold;
     color: #666;
     padding: 10px 0px 20px 10px;
     line-height: 1;
@@ -33,6 +35,12 @@ h1 small {
     font-weight: normal;
     margin-left: 5px;
     color: #aaa;
+}
+
+h3 {
+    font-size: 100%;
+    font-weight: normal;
+    margin-bottom: 5px;
 }
 
 #main {
@@ -67,7 +75,7 @@ h1 small {
     /*box-shadow: inset 0px 2px 3px rgba(0, 0, 0, 0.15);*/
     height: 160px;
     font: 10pt courier, monospace;
-    color: #888;
+    color: #666;
     margin-left: 10px;
     float: left;
     margin-right: 10px;
@@ -77,24 +85,26 @@ h1 small {
 
 #code textarea:focus {
     border-color: #666;
+    color: #444;
 }
 
-#code textarea::-webkit-scrollbar {
+textarea::-webkit-scrollbar {
     width:6px;
+    height: 6px;
 }
 
-#code textarea::-webkit-scrollbar-track {
+textarea::-webkit-scrollbar-track {
     background: transparent;
 }
 
-#code textarea::-webkit-scrollbar-thumb {
+textarea::-webkit-scrollbar-thumb {
     background: #aaa;
     border-radius: 100px;
 }
 
-#code textarea::-webkit-scrollbar-corner, 
-#code textarea::-webkit-resizer, 
-#code textarea::-webkit-scrollbar-button { 
+textarea::-webkit-scrollbar-corner, 
+textarea::-webkit-resizer, 
+textarea::-webkit-scrollbar-button { 
     display:none;
     height: 0px;
 }
@@ -113,23 +123,23 @@ h1 small {
     outline: none;
 }
 
-#code pre::-webkit-scrollbar {
+pre::-webkit-scrollbar {
     width:6px;
     height: 6px;
 }
 
-#code pre::-webkit-scrollbar-track {
+pre::-webkit-scrollbar-track {
     background: transparent;
 }
 
-#code pre::-webkit-scrollbar-thumb {
+pre::-webkit-scrollbar-thumb {
     background: #888;
     border-radius: 100px;
 }
 
-#code pre::-webkit-scrollbar-corner, 
-#code pre::-webkit-resizer, 
-#code pre::-webkit-scrollbar-button { 
+pre::-webkit-scrollbar-corner, 
+pre::-webkit-resizer, 
+pre::-webkit-scrollbar-button { 
     display:none;
     height: 0px;
 }
@@ -141,25 +151,20 @@ h1 small {
     padding: 10px;
     border-radius: 5px;
     border: solid 1px #bbb;
-    text-align: center;
     margin: 0px 10px 10px 10px;
 }
 
-footer {
-    font-size: 80%;
-    color: #fff;
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    text-shadow: 0px 1px 0px rgba(0, 0, 0, .75);
+#options .left {
+    width: 300px;
 }
 
-footer a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-footer a:hover {
-    text-decoration: underline;
+#format_string {
+    width: 278px;
+    padding: 5px;
+    border: solid 1px #bbb;
+    border-radius: 3px;
+    margin-left: 10px;
+    height: 70px;
+    outline: none;
+    font-family: inherit;
 }
