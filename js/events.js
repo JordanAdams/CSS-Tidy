@@ -11,8 +11,8 @@ window.addEventListener('load', function() {
 
 	}
 
-	format_input.addEventListener('keyup', update_output);
+	format_input.addEventListener('keyup', update_output, false);
 
-	input.addEventListener('keyup', update_output);
+	input.addEventListener('keyup', update_output, false);
 
 });
