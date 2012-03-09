@@ -1,178 +1,146 @@
-html {
-    background: #f5f5f5 url('../images/bg.png') repeat-x top center;
+html
+{
+    background:#dfe7ec;
 }
-
-body {
-    margin: 0px;
-    padding: 0px;
-    width: 656px;
-    margin: 100px auto 20px auto;
-    overflow-y: scroll;
-    color: #444;
-    font: 10pt "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+body
+{
+    margin:40px auto;
+    padding:0;
+    width:820px;
+    position:relative;
+    font-family:"Helvetica Neue", Helvetica, Arial, san-serif;
+    color:#fff;
+    font-size:100%;
 }
-
-h1, h2, h3, h4, h5, h6 {
-    margin: 0px;
+body:before, body:after, textarea, pre
+{
+    font-family:"Courier New", Courier, monospace;
 }
-
-h1 {
-    font-size: 150%;
-    font-weight: bold;
-    color: #666;
-    padding: 10px 0px 20px 10px;
-    line-height: 1;
+body:before
+{
+    content:'{';
+    top:7px;
+    left:-40px;
 }
-
-h1 span {
-    color: #ccc;
-    font-size: 90%;
-    vertical-align: text-top;
+body:after
+{
+    content:'}';
+    bottom:-5px;
+    right:-40px;
 }
-
-h1 small {
-    font-size: 60%;
-    font-weight: normal;
-    margin-left: 5px;
-    color: #aaa;
+body:before, body:after, h1
+{
+    position:absolute;
+    display:block;
+    font-size:3em;
+    text-shadow:0 0 1px black, 0 0 10px rgba(0,0,0,.1);
+    color:#fff;
 }
-
-h3 {
-    font-size: 100%;
-    font-weight: normal;
-    margin-bottom: 5px;
+h1
+{
+    margin:0;
+    left:-160px;
+    top:17px;
+    font-size:1.7em;
 }
-
-#main {
-    background: #fff;
-    border-radius: 5px;
-    border: solid 1px #888;
-    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.25);
+#main
+{
+    box-shadow:0 0 10px rgba(0,0,0,.1);
+    border:1px solid #BFCFD9;
+    background:#fff;
+    color:#454545;
+    padding:0 20px 20px 20px;
+    border-radius:8px;
 }
-
-#code {
-    margin-bottom: 10px;
+small
+{
+    display:block;
+    font-size:.9em;
+    margin:20px 0 0 20px;
+    color:#A9BFCB;
+    text-shadow:0 1px 0 #fff;
 }
-
-#code:after {
-    float: none;
-    clear: both;
-    height: 0px;
-    content: '';
-    display: block;
+small a
+{
+    color:#86A5B6;
+    text-decoration:none;
+    border-bottom:1px dotted #86A5B6;
 }
-
-#code textarea {
-    width: 300px;
-    padding: 5px;
-    display: block;
-    border: none;
-    background: #fff;
-    border-radius: 5px;
-    border: solid 1px #bbb;
-    outline: none;
-    height: 160px;
-    color: #666;
-    margin-left: 10px;
-    float: left;
-    margin-right: 10px;
-    -webkit-transition: all 0.05s ease-in;
-    font-family: inherit;
-    -moz-transition: all 0.05s ease-in;
+small a:hover
+{
+    color:#E49958;
 }
-
-#code textarea:focus {
-    border-color: #666;
-    color: #444;
+h2
+{
+    margin:20px 0;
 }
-
-textarea {
-	font-size: inherit;
-	resize: none;
-}
-
-pre {
-	font-size: inherit;
-}
-
-textarea::-webkit-scrollbar {
+textarea::-webkit-scrollbar, pre::-webkit-scrollbar
+{
     width:6px;
-    height: 6px;
+    height:6px;
 }
-
-textarea::-webkit-scrollbar-track {
-    background: transparent;
+textarea::-webkit-scrollbar-track, pre::-webkit-scrollbar-track
+{
+    background:transparent;
 }
-
-textarea::-webkit-scrollbar-thumb {
-    background: #aaa;
-    border-radius: 100px;
+textarea::-webkit-scrollbar-thumb, pre::-webkit-scrollbar-thumb
+{
+    background:#BFCFD9;
+    border-radius:100px;
 }
-
-textarea::-webkit-scrollbar-corner, 
-textarea::-webkit-resizer, 
-textarea::-webkit-scrollbar-button { 
+textarea::-webkit-scrollbar-corner, textarea::-webkit-resizer, textarea::-webkit-scrollbar-button,
+pre::-webkit-scrollbar-corner, pre::-webkit-resizer, pre::-webkit-scrollbar-button
+{
     display:none;
-    height: 0px;
+    height:0px;
 }
 
-#code pre {
-    background: #444;
-    width: 300px;
-    padding: 5px;
-    border-radius: 5px;
-    height: 160px;
-    float: left;
-    font: 10pt courier, monospace;
-    color: #fff;
-    margin: 0px;
+textarea, pre
+{
+    width:360px;
+    height:360px;
+    padding:5px;
+    margin:0 0 20px 0;
+    -webkit-box-sizing:content-box;
+    -moz-box-sizing:content-box;
+    box-sizing:content-box;
+    border-radius:5px;
+    font-size:.9em;
     overflow-y: scroll;
-    outline: none;
-    font-family: inherit;
+    display:block;
+    background:#F2F6F7;
+    border:1px solid #CFDCE2;
+    outline:none;
+    color:#333;
+    resize:none;
+    box-shadow:0 0 5px rgba(0,0,0,.1);
 }
-
-pre::-webkit-scrollbar {
-    width:6px;
-    height: 6px;
+textarea:focus, pre:focus
+{
+    border-color:#ACC2CD;
+    background:#E9F0F1;
 }
-
-pre::-webkit-scrollbar-track {
-    background: transparent;
+#in
+{
+    margin-right:20px;
 }
-
-pre::-webkit-scrollbar-thumb {
-    background: #888;
-    border-radius: 100px;
+#in, #out
+{
+    float:left;
+    display:block;
 }
-
-pre::-webkit-scrollbar-corner, 
-pre::-webkit-resizer, 
-pre::-webkit-scrollbar-button { 
-    display:none;
-    height: 0px;
+#options
+{
+    clear:both;
 }
-
-#options {
-    float: none;
-    clear: both;
-    background: #f2f2f2;
-    padding: 10px;
-    border-radius: 5px;
-    border: solid 1px #bbb;
-    margin: 0px 10px 10px 10px;
-}
-
-#options .left {
-    width: 300px;
-}
-
-#format_string {
-    width: 278px;
-    padding: 5px;
-    border: solid 1px #bbb;
-    border-radius: 3px;
-    margin-left: 10px;
+#format_string
+{
     height: 120px;
-    outline: none;
-    font-family: inherit;
+}
+textarea,pre,a
+{
+    -webkit-transition:all .2s ease-in;
+    -moz-transition:all .2s ease-in;
+    -o-transition:all .2s ease-in;
+    transition:all .2s ease-in;
 }
