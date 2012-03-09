@@ -1,18 +1,22 @@
 window.addEventListener('load', function() {
 
-	input = document.getElementById('input');
-	format_input = document.getElementById('format_string');
+	do_watermarks();
 
-	function update_output () {
+	id('format_string').addEventListener('keyup', function() {
+		update_output();
+	}, false);
+	
+	/*id('format_string').addEventListener('click', function() {
+		do_watermarks();
+	}, false);*/
 
-		blocks = make_blocks(input.value);
-		css = format_css(blocks, format_input.value);
-		document.getElementById('output').innerHTML = css;
+	
+	id('input').addEventListener('keyup', function() {
+		update_output();
+	}, false);
+	
+	/*id('input').addEventListener('click', function() {
+		do_watermarks();
+	}, false);*/
 
-	}
-
-	format_input.addEventListener('keyup', update_output, false);
-
-	input.addEventListener('keyup', update_output, false);
-
-});
+}, false);

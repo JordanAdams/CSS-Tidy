@@ -70,22 +70,29 @@ h3 {
     background: #fff;
     border-radius: 5px;
     border: solid 1px #bbb;
-    resize: none;
     outline: none;
-    /*box-shadow: inset 0px 2px 3px rgba(0, 0, 0, 0.15);*/
     height: 160px;
-    font: 10pt courier, monospace;
     color: #666;
     margin-left: 10px;
     float: left;
     margin-right: 10px;
     -webkit-transition: all 0.05s ease-in;
+    font-family: inherit;
     -moz-transition: all 0.05s ease-in;
 }
 
 #code textarea:focus {
     border-color: #666;
     color: #444;
+}
+
+textarea {
+	font-size: inherit;
+	resize: none;
+}
+
+pre {
+	font-size: inherit;
 }
 
 textarea::-webkit-scrollbar {
@@ -121,6 +128,7 @@ textarea::-webkit-scrollbar-button {
     margin: 0px;
     overflow-y: scroll;
     outline: none;
+    font-family: inherit;
 }
 
 pre::-webkit-scrollbar {
@@ -164,7 +172,7 @@ pre::-webkit-scrollbar-button {
     border: solid 1px #bbb;
     border-radius: 3px;
     margin-left: 10px;
-    height: 70px;
+    height: 120px;
     outline: none;
     font-family: inherit;
 }

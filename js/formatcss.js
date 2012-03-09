@@ -1,11 +1,3 @@
-function trim_space (string) {
-
-	string = string.replace(/^\s+|\s+$/g, '');
-
-	return string;
-
-}
-
 function make_blocks(css) {
 
 	var input = document.getElementById('input');
@@ -22,7 +14,7 @@ function make_blocks(css) {
 
 		css[i] = css[i].split('{');
 		
-		block.selector = trim_space(css[i][0]);
+		block.selector = css[i][0].trim();
 		var propvals = css[i][1].split(';') || null;
 
 		/^\s*$/.test(propvals[propvals.length-1]) ? propvals.pop() : false;
@@ -30,8 +22,8 @@ function make_blocks(css) {
 		for(var x in propvals) {
 
 			var pv = propvals[x].split(':');
-			var prop = trim_space(pv[0]);
-			var val = trim_space(pv[1]);
+			var prop = pv[0].trim();
+			var val = pv[1].trim();
 
 			block.props.push([prop, val]);
 
@@ -77,6 +69,6 @@ function format_css(blocks, format_str) {
 		}
 	}
 
-	return trim_space(css);
+	return css.trim();
 
 }

@@ -6,8 +6,8 @@
 
 		<link rel="stylesheet" href="fonts/chunk_five/stylesheet.css">
 		<link rel="stylesheet" href="css/style.css">
-
-		<script type="text/javascript" src="js/jquery.js"></script>
+		
+		<script type="text/javascript" src="js/helpers.js"></script>
 		<script type="text/javascript" src="js/formatcss.js"></script>
 		<script type="text/javascript" src="js/events.js"></script>
 
@@ -19,19 +19,33 @@
 			<h1>CSS Tidy <span>{ }</span><small>by, Jordan Adams</small></h1>
 
 			<section id="code">
-				<textarea id="input">Enter you CSS here...</textarea>
+				<textarea id="input"></textarea>
 
-				<pre id="output" contenteditable="true">Formatted CSS will appear here...</pre>
+				<pre id="output" contenteditable="true"></pre>
 			</section>
 
 			<section id="options">
 				<section class="left">
 					<article>
 						<h3>Format String</h3>
-						<textarea id="format_string">#selector {<br>  #propertyA: #valueA;<br>  #propertyB: #valueB;<br>}<br><br>#end</textarea>
+						<textarea id="format_string"></textarea>
 					</article>
 				</section>
 			</section>
 		</section>
+		
+		<script type="text/javascript">
+		
+		  var _gaq = _gaq || [];
+		  _gaq.push(['_setAccount', 'UA-21875757-2']);
+		  _gaq.push(['_trackPageview']);
+		
+		  (function() {
+		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		  })();
+		
+		</script>
 	</body>
 </html>
